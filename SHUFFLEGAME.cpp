@@ -1,4 +1,4 @@
-// PROGRAM OF 9-TILE PUZZLE SHUFFLE GAME IN C LANGUAGE 
+// PROGRAM OF 9-TILE PUZZLE SHUFFLE GAME IN C++ LANGUAGE 
 #include<stdio.h>
 #include<iostream.h>
 #include<stdlib.h>
