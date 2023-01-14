@@ -1,0 +1,139 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+struct node
+{
+ int data;
+ struct node *next;
+};
+struct node *head;
+
+void display()
+{
+ int i=1;
+ struct node* temp=head;
+ if(head==NULL)
+  {
+   printf("List is empty:\n");
+   return;
+  }
+ printf("List is: \n");
+ while(temp!=NULL)
+  {
+   printf("Node %d : %d\n",i,temp->data);
+   temp=temp->next;
+   i++;
+  }
+ printf("\n");
+}
+
+void front(int data)
+{
+ struct node* temp=(struct node*)malloc(sizeof(struct node));
+ temp->data=data;
+ temp->next=head;
+ head=temp;
+ display();
+}
+
+void middle(int p,int data)
+{
+ int s = calcSize(head);
+
+ if(p < 1 || s < p)
+    {
+	printf("Can't insert, %d is not a valid position\n",p);
+    }
+ else
+    {
+	struct node* in=head;
+	struct node* temp=(struct node*)malloc(sizeof(struct node));
+	temp->data=data;
+	temp->next=NULL;
+	while(--p)
+	{
+	    in=in->next;
+	}
+	temp->next= in->next;
+	in->next = temp;
+    }
+ display();
+}
+
+void end(int data)
+{
+ struct node* t = head;
+ struct node* temp=(struct node*)malloc(sizeof(struct node));
+ temp->data=data;
+ temp->next=NULL;
+  if(head==NULL)
+    {
+	head = temp;
+        return;
+    }
+
+
+    while(t->next!=NULL)
+        t = t->next;
+
+    t->next = temp;
+ display();
+
+}
+
+int calcSize(struct node* n)
+{
+    int size=0;
+
+    while(n!=NULL){
+	n = n->next;
+	size++;
+    }
+    return size;
+}
+
+void main()
+{
+ int ch,n,p;
+ clrscr();
+ printf("Insertion in List Operation:\n  ");
+ printf("\t[1]:At front \n ");
+ printf("\t[2]:In Middle \n ");
+ printf("\t[3]:At end \n ");
+ printf("\t[4]:Exit \n ");
+ do
+  {
+   printf("Enter your choice: \n ");
+   scanf("%d",&ch);
+   switch(ch)
+    {
+     case 1:
+	    printf("Enter node to insert:\n ");
+	    scanf("%d",&n);
+	    front(n);
+	    break;
+     case 2:
+	    printf("Enter node to insert:\n ");
+	    scanf("%d",&n);
+	    printf("Enter position after which new node to insert:\n ");
+	    scanf("%d",&p);
+	    middle(p,n);
+	    break;
+     case 3:
+	    printf("Enter node to insert:\n ");
+	    scanf("%d",&n);
+	    end(n);
+	    break;
+     case 4:
+	    exit(1);
+	    break;
+
+     default:
+	    printf("Enter choice: [1/2/3]\n");
+	    break;
+    }
+  }while(ch!=4);
+
+ getch();
+}
