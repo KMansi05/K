@@ -10,11 +10,14 @@
 #define true  1
 #define false 0
 void disp();
-void printmenu();void intro();
-void levelmenu();void easy();
+void printmenu();
+void intro();
+void levelmenu();
+void easy();
 void initial(int x);
 void draw(int x, int y, int i);
-void userwin(int no);int check(int key);
+void userwin(int no);
+int check(int key);
 int load,i,step,level,num[25],win;
 void main()
 {     int gdriver = DETECT, gmode, errorcode;
