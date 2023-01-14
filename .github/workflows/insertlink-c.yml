@@ -109,10 +109,11 @@ void main()
    switch(ch)
     {
      case 1:
-	    printf("Enter node to insert:\n ");
-	    scanf("%d",&n);
-	    front(n);
-	    break;
+	     printf("Enter node to insert:\n ");
+	     scanf("%d",&n);
+	     front(n);
+	     break;
+
      case 2:
 	    printf("Enter node to insert:\n ");
 	    scanf("%d",&n);
