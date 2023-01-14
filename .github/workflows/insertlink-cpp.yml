@@ -18,10 +18,10 @@ void display()
    printf("List is empty:\n");
    return;
   }
- printf("List is: \n");
+ printf("List is:\n");
  while(temp!=NULL)
   {
-   printf("Node %d : %d\n",i,temp->data);
+   printf("Node %d :%d\n", i, temp->data);
    temp=temp->next;
    i++;
   }
@@ -104,7 +104,7 @@ void main()
  printf("\t[4]:Exit \n ");
  do
   {
-   printf("Enter your choice: \n ");
+   printf("Enter your choice:\n ");
    scanf("%d",&ch);
    switch(ch)
     {
